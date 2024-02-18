@@ -9,7 +9,8 @@ html {
     scroll-behavior: smooth;
 }
 
-$mainSize: 10px; 
+$mainSize: 10px;
+$mainSizeElement: 100px; 
 
 @mixin headerFont ($size: $mainSize, $weight: 700) {
     font: {
@@ -76,3 +77,132 @@ header {
         }
     }  
 }
+
+// MAIN
+
+main {
+    width: 100%;
+    height: $mainSize * 59.4;
+    background-color: #7067CF;
+
+    .app-content-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: $mainSize *4;
+
+        .main__image-container-arrow {
+            width: $mainSize * 3.2;
+            height: $mainSize * 3.2;
+            position: relative;
+
+            .arrow_left ,
+            .arrow_right {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+
+            .slider__checkbox {
+                cursor: pointer;
+                display: inline-block;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                opacity: 0;
+                // z-index: 2;
+                left: 0px; 
+            }
+        }
+     }
+
+        .content-wrapper-slider1 {
+            width: $mainSizeElement * 7.96;
+            height: $mainSize * 50.595;
+            margin-top: $mainSize *5.4;
+            display: flex;
+            justify-content: space-between;
+    
+            // слайд 1
+    
+            .main__image-container-phone1 {
+                width: $mainSizeElement * 2.4;
+                height: max-content;
+    
+                .phone-vertical {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+            }
+            
+            .main__image-container-phone2 {
+                width: $mainSizeElement * 4.83;
+                height: max-content;
+                margin-top: $mainSizeElement *1.23;
+                
+                .phone-horizontal {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+            }
+        } 
+        
+        
+        // слайд 2
+
+        .slider-secondary {
+            display: none;
+
+            .content-wrapper-slider2 {
+                width: $mainSizeElement * 7.96;
+                height: $mainSize * 50.595;
+                margin-top: $mainSize *5.4;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+              
+               .main__image-container-phone3 ,
+               .main__image-container-phone5 {
+                  width: $mainSizeElement * 1.5602;
+                  height: $mainSizeElement * 3.14;
+                  position: absolute;
+        
+                  .phone-vertical1,
+                  .phone-vertical3 {
+                      width: 100%;
+                      height: 100%;
+                      object-fit: contain;
+                  }
+                }
+        
+                .main__image-container-phone3 {
+                    left: $mainSizeElement * 1.4;
+                    }
+        
+                .main__image-container-phone5 {
+                    left: $mainSizeElement * 4.97;
+                    }
+        
+              
+              .main__image-container-phone4 {
+                  width: $mainSizeElement * 2.5491;
+                  height: max-content;
+                  position: absolute;
+                 
+                  .phone-vertical2 {
+                      width: 100%;
+                      height: 100%;
+                      object-fit: contain;
+                  }
+              }
+            }  
+        }
+    
+    .main__image-container-arrow:has(input:checked) .slider-primary {
+         display: block;
+    }
+       
+}  
