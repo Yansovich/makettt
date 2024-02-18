@@ -1,1 +1,78 @@
 @import './reset.scss';
+@import url('../assets/fonts/Lato/');
+
+
+html {
+    font-family: 'Lato', 'Tahoma', sans-serif;
+    font-size: 10px;
+    color: #5A5A7F;
+    scroll-behavior: smooth;
+}
+
+$mainSize: 10px; 
+
+@mixin headerFont ($size: $mainSize, $weight: 700) {
+    font: {
+      size: $size;
+      weight: $weight;
+    }
+  }
+
+header {
+    width: 100%;
+    height: $mainSize * 6.5;
+    background-color: #000025; 
+    
+    .header-content-wrapper {
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: $mainSize * 7.5;
+        padding-right: $mainSize * 7.5;
+    }
+
+    .logo {
+        @include headerFont ($mainSize * 2.5, );
+        line-height: 30px;
+        color: #FFFFFF;
+
+        &__text_yelloy {
+            color: #EDFF7E;
+        }
+    }
+    
+    .header__navigation {
+        width: 100%;
+        max-width: $mainSize * 37.5;
+        height: $mainSize * 1.4;
+
+        .header__list {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            @include headerFont($mainSize * 1.2, );
+            line-height: 14.4px;
+            color: #FFFFFF;
+
+            li:first-child {
+                color: #EDFF7E;
+            }
+
+            .header__list-item {
+                display: flex;
+            }
+
+            .header__list-item + .header__list-item::before {
+                content: '';
+                display: block;
+                width: $mainSize / 5;
+                height: $mainSize / 5;
+                border-radius: 50%;
+                background-color: #FFFFFF;
+                margin: 6px 12px;
+            }
+        }
+    }  
+}
