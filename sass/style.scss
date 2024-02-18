@@ -117,7 +117,7 @@ main {
      }
 
         .content-wrapper-slider1 {
-            width: $mainSizeElement * 7.96;
+            max-width: $mainSizeElement * 7.96;
             height: $mainSize * 50.595;
             margin-top: $mainSize *5.4;
             display: flex;
@@ -204,5 +204,93 @@ main {
     .main__image-container-arrow:has(input:checked) .slider-primary {
          display: block;
     }
-       
+      
 }  
+
+section {
+    width: 100%;
+    height: $mainSizeElement * 4.84;
+
+    @mixin sectionFont ($sizeS: $mainSize * 3, $weightS: 900) {
+        font: {
+          size: $sizeS;
+          weight: $weightS;
+        }
+      }
+
+    .title-wrapper {
+        height: $mainSizeElement * 1.16;
+        display: flex;
+        flex-direction: column;
+        gap: $mainSize * 2;
+        margin-top: $mainSize * 6;
+        padding: 0 40px;
+
+        h1 {
+            width: $mainSizeElement * 9.6;
+            height: $mainSize * 3.6;
+           
+            @include sectionFont( ); 
+            line-height: $mainSize * 3.6;
+            color: #000025;
+        }
+
+        p {
+            @include sectionFont($mainSize * 1.6 , 400); 
+            line-height: $mainSize * 3;
+        }  
+    }
+
+    
+    .card-wrapper {
+        display: grid;
+        grid-template-rows: repeat(2 , 1fr);
+        grid-template-columns: repeat(3 , 1fr);
+        grid-auto-flow: row;
+    
+        gap: $mainSize * 2;
+        margin-top: $mainSize * 4;
+        margin-bottom: $mainSize * 3;
+        padding: 0 40px;
+        position: relative;
+
+        &-info {
+            width: 100%;
+            max-width: $mainSizeElement * 3;
+            height: $mainSize * 9.8;
+            border: 1px solid #000025;
+
+            .card-icon {
+                width: $mainSize * 6;
+                height: $mainSize * 6;
+                position: absolute;
+                
+                .icon {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+
+                h2 {
+                    @include sectionFont($mainSize * 1.8 , 900); 
+                    line-height: $mainSize * 1.8;
+    
+                    position: absolute;
+                    left: 80px;
+                }
+
+              
+            }
+
+           
+
+
+               
+        }
+
+
+
+
+    }
+
+    }    
