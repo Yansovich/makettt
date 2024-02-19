@@ -207,9 +207,12 @@ main {
       
 }  
 
+// секция 1
+
 section {
     width: 100%;
     height: $mainSizeElement * 4.84;
+    padding: 60px 40px 30px 40px;
 
     @mixin sectionFont ($sizeS: $mainSize * 3, $weightS: 900) {
         font: {
@@ -223,8 +226,6 @@ section {
         display: flex;
         flex-direction: column;
         gap: $mainSize * 2;
-        margin-top: $mainSize * 6;
-        padding: 0 40px;
 
         h1 {
             width: $mainSizeElement * 9.6;
@@ -248,10 +249,8 @@ section {
         grid-auto-flow: row;
         row-gap: $mainSize * 4.2;
         column-gap: $mainSize * 2;
-    
         margin-top: $mainSize * 4;
-        margin-bottom: $mainSize * 3;
-        padding: 0 40px;
+       
         
         &-info {
             width: 100%;
@@ -291,4 +290,89 @@ section {
 
         }              
     }
+}
+
+// секция 2
+
+.section__portfolio {
+    width: 100%;
+    height: $mainSizeElement * 8.65;
+    background-color: #EDFF7E;
+    padding: 30px 40px 60px 40px;
+
+    .title-wrapper {
+        height: $mainSizeElement * 1.34;
+        display: flex;
+        flex-direction: column;
+        gap: $mainSize * 2;
+
+        .button-container {
+            width: $mainSizeElement * 3.16;
+            height: $mainSize * 2.8;
+            display: flex;
+            justify-content: space-between;
+
+            .btn {
+                border: 1px solid #7067CF;
+                background-color: #EDFF7E;
+                cursor: pointer;
+                border-radius: 4px;
+                padding: 8px;
+
+                font-size: $mainSize * 1.2;
+                font-weight: 400;
+                line-height: $mainSize * 1.2;
+            
+            }
+
+            .btn-portfolio1 {
+                width: $mainSize * 3;
+            }
+
+            .btn-portfolio2 {
+                width: $mainSize * 8.1;
+            }
+
+            .btn-portfolio3 {
+                width: $mainSize * 9.7;
+                padding: 7.5px;
+            }
+
+            .btn-portfolio4 {
+                width: $mainSize * 6;
+            }
+
+            .btn:active {
+                scale: 0.95;
+                background-color: #7067CF;
+                color: #FFFFFF;
+            }    
+        }
+    }   
+    
+    .portfolio-wrapper {
+        width: $mainSizeElement * 6.01;
+        display: grid;
+        grid-template-rows: repeat(3 , 1fr);
+        grid-template-columns: repeat(4 , 1fr);
+        grid-auto-flow: row;
+        row-gap: $mainSize * 2;
+        column-gap: $mainSize * 2;
+        margin-top: $mainSize * 2;
+
+        &-image {
+            width: $mainSizeElement * 2.2;
+            height: $mainSizeElement * 1.87;
+
+            .image {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+
+
+    }
+
+
 }
