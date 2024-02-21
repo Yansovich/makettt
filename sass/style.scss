@@ -372,3 +372,32 @@ section {
 
 
 }
+
+// подвал
+
+footer {
+    background-color: #EDFF7E;
+    padding: 20px 40px;
+    border: 1px solid #7067CF;
+
+    .footer-content-wrapper {
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+
+       .footer-text {
+        font-size: $mainSize * 1.3;
+        font-weight: 900;
+        line-height: $mainSize * 1.3;
+
+       }
+
+       .footer-icons-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: $mainSizeElement * 1.52;
+        height: $mainSize * 3.2;
+       }
+    }
+}
