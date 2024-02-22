@@ -118,11 +118,11 @@ main {
      }
 
         .content-wrapper-slider1 {
-            width: 100%;
-            // max-width: $mainSizeElement * 7.96;
+            width: $mainSizeElement * 7.96;
             height: $mainSize * 50.595;
             display: flex;
             justify-content: space-between;
+            // flex-shrink: 2;
     
             // слайд 1
     
@@ -131,6 +131,7 @@ main {
                 height: max-content;
     
                 .phone-vertical {
+                    display: block;
                     width: 100%;
                     height: 100%;
                     object-fit: contain;
@@ -143,6 +144,7 @@ main {
                 margin-top: $mainSizeElement *1.23;
                 
                 .phone-horizontal {
+                    display: block;
                     width: 100%;
                     height: 100%;
                     object-fit: contain;
@@ -401,3 +403,166 @@ footer {
        }
     }
 }
+
+// бургер 
+
+.burger {
+    display: none;
+   
+    .burger__container {
+        width: 25px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        position: relative;
+
+        .burger__container {
+            width: 25px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            position: relative;
+        }
+
+        .burger__line {
+            height: 2.4px;
+            width: 25px;
+            background-color: #FFFFFF;
+            border-radius: 5px;
+        }
+
+        .burger__line::after,
+        .burger__line:before {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 25px;
+            height: 2.4px;
+            background-color: #FFFFFF;
+            border-radius: 5px;
+        }
+
+        .burger__line::after {
+            top: 0;
+            left: 0;
+            transform: translateY(100%);
+        }
+
+        .burger__line:before {
+            bottom: 0;
+            left: 0;
+            transform: translateY(-100%);
+        }
+
+        .burger__checkbox {
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .app-content-wrapper {
+        padding: 20px;
+    }
+
+    .header__navigation {
+        display: none;
+    }
+
+
+    .header-content-wrapper {
+        flex-direction: row;
+        align-items: center;
+        transition: .5s ease-in;
+    }
+
+    .header-content-wrapper:has(.burger__checkbox:checked) {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 42px;
+        z-index: 1;
+        background-color: #7067CF;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .header-content-wrapper:has(.burger__checkbox:checked) .header__navigation {
+        display: block;
+    }
+
+    .burger {
+        position: absolute;
+        left: 20px;
+    }
+
+    .logo {
+        position: absolute;
+        left: 125px;
+    }
+
+    .header-content-wrapper:has(.burger__checkbox:checked) .burger {
+        top: 20px;
+        left: 20px;
+    }
+
+    .header-content-wrapper:has(.burger__checkbox:checked) .logo {
+        top: 16px;
+        left: 125px;
+        font-size: 19.69px;
+    }
+
+    .header-content-wrapper:has(.burger__checkbox:checked) .burger__line {
+        rotate: (90deg);
+    }
+
+    .header-content-wrapper .header__navigation {
+        display: block;
+        position: fixed;
+        top: 229px;
+        left: 68px;
+        // bottom: 0;
+        right: 0;
+        z-index: -1;
+        transform: translateX(100%);
+        transition: 0.3s;
+    }
+
+    .header-content-wrapper:has(.burger__checkbox:checked) .header__navigation {
+        transform: translateX(0%);
+        transition: 0.3s;
+    }
+
+    .header-content-wrapper:has(.burger__checkbox:checked) .header__list-item {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 28.8px;
+        letter-spacing: -3.5%;
+    }
+
+    .header-content-wrapper:has(.burger__checkbox:checked) .header__list-item::before {
+        opacity: 0;
+    }
+
+    .header-content-wrapper:has(.burger__checkbox:checked) .header__list {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 27px;
+    }
+
+}
+
+
+
+
+
